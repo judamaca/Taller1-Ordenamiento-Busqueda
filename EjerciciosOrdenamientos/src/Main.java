@@ -5,9 +5,9 @@ public class Main {
         int[] myArray = {70, 12, 19, 45, 11, 33, 26};
         MisAlgoritmos misAlgoritmos = new MisAlgoritmos();
 
-        misAlgoritmos.bubbleSort(myArray);
-        for (int num: myArray) {
-            System.out.println(num + " ");
+        misAlgoritmos.insertionSort(myArray);
+        for (int n: myArray) {
+            System.out.println(n + " ");
         }
     }
 }

@@ -10,8 +10,8 @@ public class MisAlgoritmos implements Ordenamientos, Busquedas {
     }
 
     @Override
-    public int[] bubbleSort(int[] arrayDesordenado) {
-        int [] num = miArray.lenght();
+    public int[] bubbleSort(int[] myArray) {
+        int n = myArray.length;
         // 1. Bucle externo (cuenta las pasadas)
         for (int i = 0 ; i < n-1; i++) {
 
@@ -25,20 +25,50 @@ public class MisAlgoritmos implements Ordenamientos, Busquedas {
                     myArray[j+1] = myArray [j];
                     myArray[j] = temporal;
                 }
-
             }
         }
+        return myArray;
     }
 
     @Override
-    public int[] selectionSort(int[] arrayDesordenado) {
-        return new int[0];
+    public int[] selectionSort(int[] myArray) {
+        int n = myArray.length;
+
+        for (int i = 0; i < n-1; i++) {
+            int minimo = i;
+
+            for (int j = i + 1; j < n; j++) {
+                if (myArray[j] < myArray[minimo]) {
+                    minimo = j;
+                }
+            }
+
+        if (minimo != i) {
+            int temporal = myArray[minimo];
+            myArray[minimo] = myArray[i];
+            myArray [i] = temporal;
+        }
+        }
+        return myArray;
     }
 
     @Override
-    public int[] insertionSort(int[] arrayDesordenado) {
-        return new int[0];
+    public int[] insertionSort(int[] myArray) {
+        int n = myArray.length;
+
+        for (int i = 1; i < n; i++) {
+            int temporal = myArray[i];
+            int j = i - 1;
+
+                    for (j = i-1; j>=0 && myArray[j] > temporal; j--) {
+                        myArray[j + 1] = myArray[j];
+
+                    }
+                    myArray[j + 1] = temporal;
+            }
+        return myArray;
     }
+
 
     @Override
     public int[] mergeSort(int[] arrayDesordenado) {
