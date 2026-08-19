@@ -83,6 +83,9 @@ public class MisAlgoritmos implements Ordenamientos, Busquedas {
     int[] izquierda = Arrays.copyOfRange(myArray, 0, medio);
     int[] derecha = Arrays.copyOfRange(myArray, medio, myArray.length);
 
+    izquierda = mergeSort(izquierda);
+    derecha = mergeSort(derecha);
+
     int[] ordenado = new int[myArray.length];
     int i = 0,j = 0,k = 0;
 
@@ -97,19 +100,18 @@ public class MisAlgoritmos implements Ordenamientos, Busquedas {
         k = k + 1;
     }
 
-    while (j < izquierda.length) {
+    while (i < izquierda.length) {
         ordenado[k] = izquierda[i];
         i = i + 1;
         k = k + 1;
     }
 
-    while (i < derecha.length) {
+    while (j < derecha.length) {
         ordenado[k] = derecha[j];
         j = j + 1;
         k = k + 1;
     }
     return ordenado;
-
     }
 
     @Override

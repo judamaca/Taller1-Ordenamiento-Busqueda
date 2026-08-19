@@ -5,8 +5,10 @@ public class Main {
         int[] myArray = {70, 12, 19, 45, 11, 33, 26};
         MisAlgoritmos misAlgoritmos = new MisAlgoritmos();
 
-        misAlgoritmos.mergeSort(myArray);
-        for (int n: myArray) {
+        int[] ordenado = misAlgoritmos.mergeSort(myArray);
+
+        misAlgoritmos.mergeSort(ordenado);
+        for (int n: ordenado) {
             System.out.println(n + " ");
         }
     }
