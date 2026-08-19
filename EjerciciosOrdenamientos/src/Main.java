@@ -6,7 +6,7 @@ public class Main {
         MisAlgoritmos misAlgoritmos = new MisAlgoritmos();
 
 
-        misAlgoritmos.mergeSort(myArray);
+        misAlgoritmos.quickSort(myArray);
         for (int n: myArray) {
             System.out.println(n + " ");
         }
