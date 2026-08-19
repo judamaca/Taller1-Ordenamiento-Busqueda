@@ -116,6 +116,21 @@ public class MisAlgoritmos implements Ordenamientos, Busquedas {
 
     @Override
     public int[] quickSort(int[] arrayDesordenado) {
-        return new int[0];
+        if (myArray == null || myArray.length <= 1) {
+            return;
+        }
+        quickSortRecursivo(myArray, 0, myArray.length - 1);
+    }
+
+    private void quickSortRecursivo(int[] myArray, int inicio, int fin) {
+        if (inicio < fin) {
+            int indicePivote = particionar(myArray, inicio, fin);
+
+            quickSortRecursivo(myArray, inicio, indicePivote - 1);
+            quickSortRecursivo(myArray, indicePivote + 1, fin);
+
+        }
+
+
     }
 }
