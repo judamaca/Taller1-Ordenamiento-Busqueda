@@ -2,13 +2,39 @@ import java.util.Arrays;
 
 public class MisAlgoritmos implements Ordenamientos, Busquedas {
     @Override
-    public int linearSearch(int[] arrayPorExplorar, int elementoABuscar) {
-        return 0;
+    public int linearSearch(int[] myArray, int elementoABuscar) {
+        int n = myArray.length;
+
+        for (int i = 0; i < n; i++) {
+            if (myArray[i] == elementoABuscar) {
+                System.out.println("El objeto buscado esta en la posicion: " + i);
+                return i;
+            }
+        }
+        System.out.println("El objeto a buscar no esta dentro de los datos guardados");
+        return -1;
     }
 
     @Override
-    public int binarySearch(int[] arrayPorExplorar, int elementoABuscar) {
-        return 0;
+    public int binarySearch(int[] myArray, int elementoABuscar) {
+        int limiteIzq = 0;
+        int limiteDerecho = myArray.length - 1;
+
+        while ( limiteIzq <= limiteDerecho) {
+            int mitad = limiteIzq + (limiteDerecho - limiteIzq) / 2;
+
+            if (myArray[mitad] == elementoABuscar) {
+                System.out.println("El elemento a buscar esta en la posición: " + mitad);
+                return mitad;
+            }
+            if (myArray[mitad] < elementoABuscar) {
+                limiteIzq = mitad + 1;
+            }
+            if (myArray[mitad] > elementoABuscar) {
+                limiteDerecho = mitad - 1;
+            }
+        }
+        return -1;
     }
 
     @Override
